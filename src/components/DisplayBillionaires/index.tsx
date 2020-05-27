@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import classNames from "classnames/bind";
-import { Billionaire } from "../../store/items/types";
+import { Billionaire } from "../../types/types";
 import { formatNumber } from "../../utility/formatNumber";
 import chrisImage from "../../assets/images/chris.jpg";
 import styles from "./DisplayBillionaires.scss";

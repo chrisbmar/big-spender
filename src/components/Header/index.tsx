@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { Billionaire } from "../../store/items/types";
+import { Billionaire } from "../../types/types";
 import styles from "./Header.scss";
 
 const cx = classNames.bind(styles);

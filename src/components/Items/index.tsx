@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { Item } from "../../store/items/types";
+import { Item } from "../../types/types";
 import styles from "./Items.scss";
 import { formatNumber } from "../../utility/formatNumber";
 

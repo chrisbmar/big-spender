@@ -1,16 +1,14 @@
 import images from "../../utility/images";
+import * as actionTypes from "../actions/actionTypes";
 
 import {
   ItemReducerModel,
   ItemActionTypes,
-  UPDATE_ITEM,
-  UPDATE_BILLIONAIRE,
   UpdateItem,
   UpdateBillionaire,
-  SET_BILLIONAIRES,
   SetBillionaires,
   Billionaire,
-} from "./types";
+} from "../../types/types";
 
 const initialState: ItemReducerModel = {
   totalMoney: 1000,
@@ -148,11 +146,11 @@ export const itemReducer = (
   action: ItemActionTypes
 ): ItemReducerModel => {
   switch (action.type) {
-    case SET_BILLIONAIRES:
+    case actionTypes.SET_BILLIONAIRES:
       return onSetBillionaires(state, action);
-    case UPDATE_ITEM:
+    case actionTypes.UPDATE_ITEM:
       return onUpdateItem(state, action);
-    case UPDATE_BILLIONAIRE:
+    case actionTypes.UPDATE_BILLIONAIRE:
       return onUpdateBillionaire(state, action);
     default:
       return state;

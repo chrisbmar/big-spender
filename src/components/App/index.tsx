@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ItemReducerModel, Billionaire, Item } from "../../store/items/types";
-import * as actions from "../../store/items/actions";
+import { ItemReducerModel, Billionaire, Item } from "../../types/types";
+import * as actions from "../../store/actions/actions";
 import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
 import { Modal } from "../Modal/index";

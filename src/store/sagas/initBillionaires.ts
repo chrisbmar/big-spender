@@ -1,8 +1,8 @@
 import "regenerator-runtime/runtime";
 import { put, call, takeEvery } from "redux-saga/effects";
-import * as actions from "../actions";
-import { fetchData } from "../../../utility/fetchData";
-import { INIT_BILLIONAIRES } from "../types";
+import * as actions from "../actions/actions";
+import { fetchData } from "../../utility/fetchData";
+import * as actionTypes from "../actions/actionTypes";
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function* initBillionairesSaga() {
@@ -18,5 +18,5 @@ export function* initBillionairesSaga() {
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export default function* watchInitBillionaires() {
-  yield takeEvery(INIT_BILLIONAIRES, initBillionairesSaga);
+  yield takeEvery(actionTypes.INIT_BILLIONAIRES, initBillionairesSaga);
 }

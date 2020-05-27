@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames/bind";
 import { DisplayBillionaires } from "../DisplayBillionaires";
 import { Backdrop } from "../Backdrop/index";
-import { Billionaire } from "../../store/items/types";
+import { Billionaire } from "../../types/types";
 import styles from "./Modal.scss";
 
 const cx = classNames.bind(styles);

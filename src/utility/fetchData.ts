@@ -1,4 +1,4 @@
-import { Billionaire } from "../store/items/types";
+import { Billionaire } from "../types/types";
 
 export const fetchData = async (): Promise<Billionaire> => {
   try {
