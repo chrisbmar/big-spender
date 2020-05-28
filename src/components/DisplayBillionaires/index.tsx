@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import classNames from "classnames/bind";
 import { Billionaire } from "../../types/types";
+import authorInfo from "../../utility/authorInfo";
 import { formatNumber } from "../../utility/formatNumber";
-import chrisImage from "../../assets/images/chris.jpg";
 import styles from "./DisplayBillionaires.scss";
 
 const cx = classNames.bind(styles);
@@ -19,18 +19,15 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
   toggleModal,
 }) => {
   useEffect(() => {
-    const chris: Billionaire = {
-      name: "Chris Martin",
-      totalMoney: 100,
-      imageSrc: chrisImage,
-      wealthSource: "Broke",
-      introduction: `A frontend developer based in Barcelona. 
-      Currently working in Europe’s leading on-demand logistics 
-      platform which connects businesses, customers and couriers 
-      to revolutionise the way goods are transported.`,
+    const author: Billionaire = {
+      name: authorInfo.name,
+      imageSrc: authorInfo.imageSrc,
+      wealthSource: authorInfo.wealthSource,
+      totalMoney: authorInfo.totalMoney,
+      introduction: authorInfo.introduction,
     };
 
-    billionaires.push(chris);
+    billionaires.push(author);
   }, [billionaires]);
 
   const onUpdateBillionaire = (billionaire: Billionaire): void => {
