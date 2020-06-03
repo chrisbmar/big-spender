@@ -24,6 +24,11 @@ describe("All items are rendered correctly", () => {
 });
 
 describe("Buying and selling an item updates totalMoney", () => {
+  function subtract(a: string, b: number): string {
+    const aConvertedToNumber = +a.substring(1);
+    return `$${(aConvertedToNumber - b).toString()}`;
+  }
+
   it("buying an item updates totalMoney", () => {
     cy.get("[data-cy=chooseBillionaireBtn]").click();
     cy.get("[data-cy=billionaireTable]")
@@ -32,11 +37,6 @@ describe("Buying and selling an item updates totalMoney", () => {
       .invoke("text")
       .then(($value) => {
         const value = $value;
-
-        function subtract(a: string, b: number): string {
-          const aConvertedToNumber = +a.substring(1);
-          return `$${(aConvertedToNumber - b).toString()}`;
-        }
 
         cy.get("[data-cy=billionaireTable]")
           .last()
@@ -95,11 +95,6 @@ describe("Buying and selling an item updates totalMoney", () => {
       .then(($value) => {
         const value = $value;
 
-        function subtract(a: string, b: number): string {
-          const aConvertedToNumber = +a.substring(1);
-          return `$${(aConvertedToNumber - b).toString()}`;
-        }
-
         cy.get("[data-cy=billionaireTable]")
           .last()
           .find("[data-cy=selectBillionaireBtn]")
@@ -122,11 +117,6 @@ describe("Buying and selling an item updates totalMoney", () => {
       .invoke("text")
       .then(($value) => {
         const value = $value;
-
-        function subtract(a: string, b: number): string {
-          const aConvertedToNumber = +a.substring(1);
-          return `$${(aConvertedToNumber - b).toString()}`;
-        }
 
         cy.get("[data-cy=billionaireTable]")
           .last()
