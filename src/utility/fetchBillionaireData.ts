@@ -1,6 +1,6 @@
 import { Billionaire } from "../types/types";
 
-export const fetchData = async (): Promise<Billionaire> => {
+export const fetchBillionaireData = async (): Promise<Billionaire> => {
   try {
     const response = await fetch(
       "https://forbes400.herokuapp.com/api/forbes400?limit=10"

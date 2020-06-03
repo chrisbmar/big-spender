@@ -15,7 +15,7 @@ export interface Billionaire {
   wealthSource: string;
 }
 
-export interface ItemReducerModel {
+export interface ReducerModel {
   totalMoney: number;
   items: Item[];
   billionaires: Billionaire[];
@@ -44,7 +44,7 @@ export interface UpdateItem {
   };
 }
 
-export type ItemActionTypes =
+export type ActionsModel =
   | InitBillionaires
   | SetBillionaires
   | UpdateBillionaire

@@ -2,15 +2,15 @@ import images from "../../utility/images";
 import * as actionTypes from "../actions/actionTypes";
 
 import {
-  ItemReducerModel,
-  ItemActionTypes,
+  ReducerModel,
+  ActionsModel,
   UpdateItem,
   UpdateBillionaire,
   SetBillionaires,
   Billionaire,
 } from "../../types/types";
 
-const initialState: ItemReducerModel = {
+const initialState: ReducerModel = {
   totalMoney: 1000,
   billionaires: [],
   currentBillionaire: {
@@ -79,9 +79,9 @@ const initialState: ItemReducerModel = {
 };
 
 const onUpdateItem = (
-  state: ItemReducerModel,
+  state: ReducerModel,
   action: UpdateItem
-): ItemReducerModel => {
+): ReducerModel => {
   const newQuantity = action.payload.quantity;
   const indexOfItemToUpdate = state.items.findIndex(
     (item) => item.name === action.payload.item.name
@@ -106,9 +106,9 @@ const onUpdateItem = (
 };
 
 const onUpdateBillionaire = (
-  state: ItemReducerModel,
+  state: ReducerModel,
   action: UpdateBillionaire
-): ItemReducerModel => {
+): ReducerModel => {
   const currentBillionaire: { currentBillionaire: Billionaire } = {
     currentBillionaire: {
       name: action.billionaire.name,
@@ -129,9 +129,9 @@ const onUpdateBillionaire = (
 };
 
 const onSetBillionaires = (
-  state: ItemReducerModel,
+  state: ReducerModel,
   action: SetBillionaires
-): ItemReducerModel => {
+): ReducerModel => {
   const updatedBillionaireState = {
     billionaires: action.billionaires,
   };
@@ -141,10 +141,10 @@ const onSetBillionaires = (
   };
 };
 
-export const itemReducer = (
+export const reducer = (
   state = initialState,
-  action: ItemActionTypes
-): ItemReducerModel => {
+  action: ActionsModel
+): ReducerModel => {
   switch (action.type) {
     case actionTypes.SET_BILLIONAIRES:
       return onSetBillionaires(state, action);
